@@ -7,16 +7,39 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <div id="leads">
-        
-    </div>
+    <div id="time1"></div>
+    <div id="time2"></div>
+    <div id="time3"></div>
+    <div id="time4"></div>
+    <div id="time5"></div>
+    <div id="time6"></div>
+    <div id="time7"></div>
+    <div id="time8"></div>
+    <div id="time9"></div>
+    <div id="time10"></div>
+    <div id="time11"></div>
     <script>
-        leads = 0
-        axios.get('https://smtl.gama.academy/leads/1ccc5851-25e3-11eb-bf8d-0d63c80760d2')
+        leads = 0;
+        [
+        'https://smtl.gama.academy/leads/1cbdb250-25e3-11eb-bf8d-0d63c80760d2',
+        'https://smtl.gama.academy/leads/1ccc5850-25e3-11eb-bf8d-0d63c80760d2',
+        'https://smtl.gama.academy/leads/1ccc5851-25e3-11eb-bf8d-0d63c80760d2',
+        'https://smtl.gama.academy/leads/1ccc7f60-25e3-11eb-bf8d-0d63c80760d2',
+        'https://smtl.gama.academy/leads/1ccc7f61-25e3-11eb-bf8d-0d63c80760d2',
+        'https://smtl.gama.academy/leads/1ccc7f62-25e3-11eb-bf8d-0d63c80760d2',
+        'https://smtl.gama.academy/leads/1ccc7f63-25e3-11eb-bf8d-0d63c80760d2',
+        'https://smtl.gama.academy/leads/1ccc7f64-25e3-11eb-bf8d-0d63c80760d2',
+        'https://smtl.gama.academy/leads/1ccccd80-25e3-11eb-bf8d-0d63c80760d2',
+        'https://smtl.gama.academy/leads/1ccccd81-25e3-11eb-bf8d-0d63c80760d2',
+        'https://smtl.gama.academy/leads/1ccccd82-25e3-11eb-bf8d-0d63c80760d2'
+
+        ].forEach((link,i) => {
+            axios.get(link)
             .then(elements => {
                 leads = Array.from(elements.data).length
-                document.querySelector("#leads").innerHTML = `temos ${leads} leads`
+                document.querySelector("#time" + parseInt(i+1)).innerHTML = `time ${i+1} tem ${leads} leads`
             })
+        });
     </script>
 </body>
 </html>
