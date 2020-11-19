@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leads</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="leads">
+        
+    </div>
+    <script>
+        leads = 0
+        axios.get('https://smtl.gama.academy/leads/1ccc5851-25e3-11eb-bf8d-0d63c80760d2')
+            .then(elements => {
+                leads = Array.from(elements.data).length
+                document.querySelector("#leads").innerHTML = `temos ${leads} leads`
+            })
+    </script>
+</body>
+</html>
